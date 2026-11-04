@@ -65,17 +65,19 @@ button,a {
   border-bottom:1px solid var(--line)
 }
 .logo {
-  text-decoration:none;
-  font-size:35px;
-  letter-spacing:-2px;
-  font-weight:900;
-  line-height:1
+  display:inline-flex;
+  flex-shrink:0;
+  width:62px;
+  min-height:54px;
+  align-items:center;
+  border-radius:7px;
+  text-decoration:none
 }
-.logo span {
-  display:inline-block;
-  font-size:32px;
-  color:#658d3f;
-  margin-left:3px
+.logo img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:7px
 }
 .header-label {
   font-size:10px;
@@ -939,10 +941,8 @@ to {
   padding:17px 24px
 }
 .logo {
-  font-size:30px
-}
-.logo span {
-  font-size:27px
+  width:50px;
+  min-height:44px
 }
 .header-label {
   display:none

@@ -74,7 +74,7 @@ function App() {
   }
   const p = result && personalities[result];
   return <>
-    <header className="header"><a className="logo" href="/" aria-label="GRVO quiz home">GRVO<span aria-hidden="true">↗</span></a><span className="header-label">THE MOVING PERSONALITY QUIZ</span><a className="header-link" href={cta} onClick={() => track('grvo_cta_click', {placement:'header'})}>Meet GRVO <Arrow /></a></header>
+    <header className="header"><a className="logo" href={cta} aria-label="Visit the GRVO website" onClick={() => track('grvo_cta_click', {placement:'header_logo'})}><img src="/assets/grvo-logo.png" alt="GRVO" width="62" height="54" /></a><span className="header-label">THE MOVING PERSONALITY QUIZ</span><a className="header-link" href={cta} onClick={() => track('grvo_cta_click', {placement:'header'})}>Meet GRVO <Arrow /></a></header>
     <main id="main">
     {screen === 'landing' && <div className="landing screen">
       <section className="hero" aria-labelledby="hero-title"><div className="hero-copy">
