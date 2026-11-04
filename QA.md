@@ -28,8 +28,17 @@ Used the in-app Chromium browser with responsive viewport overrides at 320, 390,
 - All rendered illustrations load. Browser console inspection returned no errors or warnings.
 - Reduced-motion CSS disables confetti and transitions; implementation inspected. No system preference was changed during testing.
 
-## Remaining launch checks
+## Production verification
 
-No public quiz deployment exists yet. A real physical phone, Safari, the Facebook in-app browser, actual OS share sheets, and Facebook's live crawler/cache were **not** tested. The automated tests cover their API success/failure branches, not external services themselves. After deploying, follow the README's brief public-HTTPS sharing and metadata checks. Test with a screen reader if a formal accessibility conformance report is required; this delivery does not claim a full WCAG audit.
+Deployed to https://grvo-mover-quiz.vercel.app/ on 4 November 2026. Vercel confirmed **Deployed to Production**. Application source commit: `e5c60dc59a5933d96a38ce646e9cc043dac57ccf`.
+
+- Unauthenticated HTTP checks returned 200 for the root, all four static result pages, and `/assets/social-preview.png`.
+- The raw HTML canonical and Open Graph image URLs use the actual public production origin on every result page.
+- Completed all five questions on the public site and reached The Super Planner.
+- Copy Result reported success on the deployed site; browser console inspection returned no errors or warnings.
+
+## Remaining device/service checks
+
+A real physical phone, Safari, the Facebook in-app browser, actual OS share sheets, and Facebook's live crawler/cache were **not** tested. The automated tests cover their API success/failure branches, not external services themselves. Test with a screen reader if a formal accessibility conformance report is required; this delivery does not claim a full WCAG audit.
 
 The source bundle includes no secrets, database configuration, or Content Calendar files. No production calendar state or authentication was changed.

@@ -2,6 +2,10 @@
 
 A complete mobile-first, no-login moving personality quiz. Five questions, four original illustrated characters, deterministic results, accessible native radio controls, Back/replay, native sharing and clipboard fallbacks, Facebook sharing, campaign attribution, and static social result pages.
 
+**Live quiz:** https://grvo-mover-quiz.vercel.app/  
+**Source:** https://github.com/Glinette/grvo-mover-quiz  
+**Vercel project:** https://vercel.com/amerie/grvo-mover-quiz
+
 This is a **standalone React 18 project** using the same lightweight React/esbuild approach as the adjacent GRVO Content Calendar. It has no calendar imports, Supabase dependency, database, authentication, or shared runtime. Deploy it as its own Vercel project. The only external product destination is `https://grvo.app/`.
 
 ## Local run
@@ -44,7 +48,7 @@ Alternatively upload this folder's source files through GitHub's **Add file → 
 6. Open the actual returned production URL on a phone. Finish the quiz and test the GRVO link, Copy Result, native sharing, and Facebook's share composer. No live Facebook post is necessary to validate the composer.
 7. Inspect the public source for absolute `og:image`, canonical and `og:url` values. The PNG must load at `/assets/social-preview.png`. Use Facebook's Sharing Debugger to refresh its preview cache after launch or a metadata change.
 
-**Deployment status of this delivery:** prepared and tested locally; no public deployment has been created. No example domain in this README is a deployed quiz URL. Share the actual Vercel production URL only after deployment succeeds.
+**Deployment status:** deployed to Vercel Production on 4 November 2026. The live quiz is **https://grvo-mover-quiz.vercel.app/**. The root, all four result pages, and the social PNG were verified publicly accessible with HTTP 200 and correct production canonical/Open Graph URLs. The five-question flow and Copy Result success state were also checked in the deployed browser. Other example domains in this README remain placeholders.
 
 Vercel's URL variables are documented in [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables). `SITE_URL` is build-time configuration; `.env.example` is explanatory and the build does not automatically load `.env` files. Set variables in Vercel, or in your local shell:
 
