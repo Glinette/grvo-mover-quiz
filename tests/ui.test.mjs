@@ -19,7 +19,7 @@ async function mount(path='/',setup=()=>{}) {
 test('five questions, disabled next, Back retains selection, changed answers score correctly, replay clears',async()=>{
   const ui=await mount();
   try {
-    await ui.click('Find My');
+    await ui.click('Reveal My Moving Type!');
     assert.equal(ui.doc.activeElement.id,'question-title');
     assert.equal(ui.doc.querySelector('.next-button').disabled,true);
     await ui.answer(0); await ui.click('Next Question'); await ui.click('Back');
@@ -42,7 +42,7 @@ test('five questions, disabled next, Back retains selection, changed answers sco
 test('every personality is reachable through the UI',async()=>{
   for(let i=0;i<4;i++) {
     const ui=await mount();
-    try {await ui.click('Find My'); for(let step=0;step<5;step++){await ui.answer(i);await ui.click(step===4?'Meet My Moving':'Next Question');} assert.ok(ui.doc.querySelector('h1').textContent.includes(personalities[types[i]].title));}
+    try {await ui.click('Reveal My Moving Type!'); for(let step=0;step<5;step++){await ui.answer(i);await ui.click(step===4?'Meet My Moving':'Next Question');} assert.ok(ui.doc.querySelector('h1').textContent.includes(personalities[types[i]].title));}
     finally{ui.dom.window.close();}
   }
 });
@@ -75,7 +75,7 @@ test('copy success, native cancellation, native fallback, manual copy, and Faceb
 test('analytics stays local until configured consent; failed adapter cannot stop the quiz',async()=>{
   const sent=[]; const ui=await mount('/',w=>{w.GRVO_ANALYTICS={consent:false,send:e=>sent.push(e)}});
   try {
-    await ui.click('Find My'); assert.equal(sent.length,0);
+    await ui.click('Reveal My Moving Type!'); assert.equal(sent.length,0);
     ui.dom.window.GRVO_ANALYTICS.consent=true; await ui.answer(0); assert.equal(sent[0].name,'question_answer');
     ui.dom.window.GRVO_ANALYTICS.send=()=>{throw new Error('offline')}; await ui.click('Next Question'); await ui.answer(1); assert.equal(ui.doc.querySelector('#question-title').textContent,questions[1].title);
     assert.equal(ui.doc.cookie,''); assert.equal(ui.dom.window.localStorage.length,0);

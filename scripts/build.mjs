@@ -18,7 +18,7 @@ function html(title, description, path = '/') {
   const fields = {TITLE:title,DESCRIPTION:description,CANONICAL:`${base}${path}`,IMAGE:`${base}/assets/social-preview.png`};
   return template.replace(/__(TITLE|DESCRIPTION|CANONICAL|IMAGE)__/g, (_, key) => escape(fields[key]));
 }
-await writeFile('dist/index.html', html('What Type of Mover Are You? | GRVO', 'Five questions. Four moving personalities. Are you the planner, the last-minute mover, the sentimental packer, or the chill mover? Take the free GRVO quiz.'));
+await writeFile('dist/index.html', html("What's Your Moving Personality? | GRVO", 'Five questions. Four moving personalities. Are you the planner, the last-minute mover, the sentimental packer, or the chill mover? Take the free GRVO quiz.'));
 for (const type of types) {
   await mkdir(`dist/results/${type}`, {recursive:true});
   await writeFile(`dist/results/${type}/index.html`, html(`${personalities[type].title} | GRVO Moving Personality Quiz`, `${personalities[type].line} Discover your own moving personality in the free GRVO quiz.`, `/results/${type}/`));

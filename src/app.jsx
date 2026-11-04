@@ -79,10 +79,10 @@ function App() {
     {screen === 'landing' && <div className="landing screen">
       <section className="hero" aria-labelledby="hero-title"><div className="hero-copy">
         <div className="eyebrow"><span className="tiny-star" aria-hidden="true">✳</span> NEW HOME. SAME YOU?</div>
-        <h1 id="hero-title" ref={heading} tabIndex="-1">What type of<br/><span className="mover-word">mover</span> are you<span className="question-mark">?</span></h1>
+        <h1 id="hero-title" ref={heading} tabIndex="-1">What's Your<br/><span className="mover-word">Moving</span> Personality<span className="question-mark">?</span></h1>
         <p className="hero-sub">Are you the organized planner, the last-minute packer, or the one who still hasn't unpacked from 2022?</p>
-        <p className="hero-prompt">Answer 5 quick questions to discover your moving personality!</p>
-        <button className="button primary start-button" onClick={start}>Find My Moving Personality <Arrow /></button>
+        <p className="hero-prompt">Answer 5 quick questions to find out!</p>
+        <button className="button primary start-button" onClick={start}>Reveal My Moving Type! <Arrow /></button>
         <p className="fine-print"><span aria-hidden="true">◷</span> Free · Takes about 60 seconds · No signup required</p>
       </div><div className="hero-art" aria-label="Four cheerful moving box characters: a planner, a last-minute mover, a sentimental packer, and a chill mover" role="img">
         <div className="art-orbit"/><span className="art-star star-one">✳</span><span className="art-star star-two">✧</span>
